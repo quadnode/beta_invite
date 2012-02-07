@@ -1,0 +1,53 @@
+/**
+
+Form element styling
+
+*/
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+textarea:focus {
+  -moz-box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+  -webkit-box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+  box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+  border-color: rgba(82, 168, 236, 0.75) !important;
+  outline: medium none;
+  border-width:1px;
+  border-style: solid;
+  -moz-border-radius:3px;
+  -web-border-radius:3px;
+  border-radius:3px;
+  padding:3px 2px;
+  
+  
+}
+
+/*
+  Vertical form styles ( form elements are stacked one below the other )
+*/
+.vertical label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.vertical input[type=text], .vertical input[type=password] {
+  border: 1px solid #666;
+  padding: 4px;
+}
+
+.vertical .field {
+  margin-bottom: 10px;
+}
+
+.vertical .actions {
+  margin-top: 20px;
+}
+
+.vertical .info {
+  margin: 10px 0;
+  width: 80%;
+  color: #444;
+  padding-left: 0;
+}
