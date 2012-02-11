@@ -1,0 +1,36 @@
+en:
+  mails:
+    comment_subject:  "Hello %{user_name}, a new comment has been added."
+    crash_log_subject:  "Hello %{user_name}, %{app_name} has registered a crash log."
+    discussion_subject:  "Hello %{user_name}, a new discussion under %{category_name} has been created for %{app_name}."
+    email_confirmation_subject:  "Confirm your email to receive %{app_name} notifications"
+
+    #topics common among all templates
+    templates:
+      view:  "View %{topic}"
+      topic:  "%{topic}"
+      title:  "%{title} Report"
+      hello:  "Hello %{user_name}"
+      rights:  "All Rights Reserved"
+      contact:  "You can contact us at : "
+      subject:  "%{subject}"
+      settings:  "Advanced Settings"
+      copyright:  "Copyright"
+      company_name: "QuadNode Technologies Pvt. Ltd."
+
+      crash_logs:
+        message:  " has registered a new crash log."
+
+      comments:
+        message:  "A new comment has been added on "
+
+      discussions:
+        message:  "A new discussions has been created under "
+        category:  "%{category}"
+        
+    beta_invites:
+        subject:  "%{email} has requested a beta invite for QuadSupportApp"
+        total:  "The total is now "
+        
+    sign_up:
+        subject:  "%{name} has signed up for QuadSupportApp"
