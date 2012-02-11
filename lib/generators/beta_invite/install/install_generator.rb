@@ -38,10 +38,15 @@ module BetaInvite
         #migration_template 'migration.rb', 'db/migrate/create_beta_invite_model_data.rb'
         
         #pulling all the migration templates and generating migartion file for each
-
+        
+        migration_template 'create_beta_invites.rb', 'db/migrate/create_beta_invites.rb' if (Dir.glob("db/migrate/[0-9]*_*.rb").grep(/\d+_create_beta_invites.rb$/).first).nil?
+        migration_template 'create_delayed_jobs.rb', 'db/migrate/create_delayed_jobs.rb' if (Dir.glob("db/migrate/[0-9]*_*.rb").grep(/\d+_create_delayed_jobs.rb$/).first).nil?
       end
       
       
+      def copy_scripts_file
+        #copy_file "app/script/beta_invite/delayed_job", "app/script/delayed_job"  if Dir.glob("app/script/delayed_job").first.nil?
+      end
       # this will copy the beta_invite.seeds.rb from engine to applicatio
       # rake db:seed:beta_invite
       

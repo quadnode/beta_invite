@@ -11,6 +11,9 @@ module BetaInvite
 
     config.autoload_paths << File.expand_path("../beta_invite/lib/beta_invite", __FILE__)
     config.autoload_paths << File.expand_path("../../../config/initializers", __FILE__)
+    config.autoload_paths << File.expand_path("../../../config/locales", __FILE__)
+    config.autoload_paths << File.expand_path("../../../config/environments", __FILE__)
+    config.autoload_paths << File.expand_path("../../../mailer", __FILE__)
     
     config.autoload_paths << File.expand_path("../lib/beta_invite", __FILE__)
     

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # app.
 	
 	# Routes related to invite
-  scope '/invite' do
     match '/'      => 'beta_invite/home#index', :as => 'invite_root'    
-  end
+    match 'create_beta_invite'  => 'beta_invite/beta_invite#create'
+  #resources :beta_invite
 end

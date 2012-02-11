@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails"              , "~> 3.0.5"
   s.add_dependency "seedbank"
+  s.add_dependency "delayed_job_active_record"
+  s.add_dependency "delayed_job"	
 
   s.files = Dir["{app,lib,config,vendor,public}/**/*"] + ["Rakefile", "Gemfile", "README.rdoc"]
   s.require_path = 'lib'

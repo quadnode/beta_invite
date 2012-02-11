@@ -1,0 +1,5 @@
+<h2><%= t('mails.beta_invites.subject' , :email => @beta_invite.recipient_email) %></h2>
+<br>
+<p><%= t('mails.beta_invite.total')%> :: <h2><%= @total_count %><h2></p>
+	
+<%= link_to 'Beta - Invites log', beta_invites_url%>

@@ -1,1 +1,22 @@
-Hello World!
+<div class="beta-invite-page">
+  <div class="invite-box">
+    <div class="center">
+      <h1><%= t('title')%></h1>
+    </div>
+    <div class="email-box">
+      <h3>Provide your email id to get notified when we launch!</h3>
+      <div class="invitation">
+        <%= form_tag('create_beta_invite', :remote => true) do |f| %>
+            <div class="clearfix">
+              <input type="text" size="30" name="beta_invite[recipient_email]" placeholder="Enter your email here"  id="beta_invite_recipient_email">
+              <button class="sign-up-button invite-btn" type="submit">Get Invited</button>
+            </div>
+          <% end %>
+        </div>
+        <div class="footer dimmed">
+          <a href="http://www.quadnode.com">QuadNode Technologies</a>
+        </div>
+    </div>
+    <div id="info" class="hide"></div>
+  </div>
+</div>  

@@ -14,6 +14,8 @@ end
 
 
 gem "seedbank"
+gem "delayed_job_active_record"
+gem "delayed_job"
 
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
