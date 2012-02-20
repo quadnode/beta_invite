@@ -1,0 +1,27 @@
+<%
+ msg = flash[:notice]
+
+ is_error = false
+
+ if !@beta_invite.errors.blank? 
+	 msg = @beta_invite.errors.full_messages.join(' ')
+	 #msg = @beta_invite.errors.messages[:recipient_email].join(' ') if !@beta_invite.errors.messages[:recipient_email].nil?
+
+	 is_error = true
+ end
+
+ info_class = is_error ? "alert-message error" : "alert-message success";
+%>
+$('#info').hide( 'slow' );
+clearTimeout($('#info').get(0).timer);
+$('#info').attr('class', '').addClass('<%= info_class %>').html('<%= msg  %>').show('slow');
+$('#info').get(0).timer = setTimeout( function(){ $('#info').hide( 'slow' );}, 5000);
+
+
+
+
+
+
+
+
+
