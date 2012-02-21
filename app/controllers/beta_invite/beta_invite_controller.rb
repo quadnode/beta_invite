@@ -16,11 +16,11 @@ class BetaInvite::BetaInviteController < ApplicationController
   	@beta_invite = BetaInvite::BetaInvite.new(params[:beta_invite])
   	if @beta_invite.save
   	  flash[:notice] = "Thank you for signing up with us. We will keep you updated."    
-  	  #respond_with(@beta_invite)
-      redirect_to '/'
+  	  respond_with(@beta_invite)
   	  send_beta_invite_email
   	end
   end
+
   
   private
    

@@ -12,6 +12,7 @@
     <![endif]-->
 
     <%= stylesheet_link_tag    'beta_invite/beta_invite.css','beta_invite/common.css' %>
+     <%= csrf_meta_tag %>
 
     <!-- Le fav and touch icons -->
     <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
@@ -28,7 +29,6 @@
 
   <body class="beta-invite" data-controller="<%= controller_name %>" data-action="<%= action_name %>">
     <%= yield %>
-    <%= javascript_include_tag "application" %>
-  </body>
+    <%=  javascript_include_tag "beta_invite/lib/jquery.js", "beta_invite/lib/rails.js"%>
 </html>
 

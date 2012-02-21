@@ -1,9 +1,13 @@
 /* Common Styles */
 
 body {
-    padding-top: 60px;
+    color: #404040;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    margin: 0;
 }
-
 .brand {}
 .brand:hover {
     text-decoration: none;
