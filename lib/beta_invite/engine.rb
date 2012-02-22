@@ -2,7 +2,7 @@ require "rails"
 
 module BetaInvite
   #beta invite  Engine root path
-  BETAINVITE_PATH = File.expand_path("../../../", __FILE__)
+  $BETAINVITE_PATH = File.expand_path("../../../", __FILE__)
   
   class Engine < Rails::Engine
 
