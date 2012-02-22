@@ -10,17 +10,17 @@ Gem::Specification.new do |s|
   s.authors                   = [ "Harsha" ]
   s.email                     = [ "harsha@quadnode.com" ]
   s.homepage                  = "http://quadnode.com"
-  s.description               = "test"
+  s.description               = "Install this gem to allow users to request for a Beta-Invite for your app."
   s.summary                   = "Beta Invite version-#{s.version}"
+  
 
   #s.required_rubygems_version = "> 1.3.6"
 
-  s.add_dependency "rails"              , "~> 3.0.5"
+  s.add_dependency "rails"              , "3.1.0"
   s.add_dependency "seedbank"
-  s.add_dependency "delayed_job_active_record"
-  s.add_dependency "delayed_job"	
+# s.add_dependency "delayed_job_active_record"
+# s.add_dependency "delayed_job"	
 
   s.files = Dir["{app,lib,config,vendor,public}/**/*"] + ["Rakefile", "Gemfile", "README.rdoc"]
   s.require_path = 'lib'
-
 end

@@ -1,3 +1,5 @@
 = BetaInvite
 
-This project rocks.
+Install this gem to get your project a beta-invite implementation.
+
+Coming Soon.

@@ -12,8 +12,9 @@ require 'rake'
 #require 'spec/rake/spectask'
 #require 'spec'
 
-require 'cucumber'
-require 'cucumber/rake/task'
+#require 'cucumber'
+#require 'cucumber/rake/task'
+require 'rdoc/task'
 
 require 'rspec/core'
 require 'rspec/core/rake_task'

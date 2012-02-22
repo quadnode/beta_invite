@@ -2,33 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><%= t('title') %> - <%= t('title_text') %></title>
+    <title><%= t('beta_invite.title' , :app_name => BetaInviteConfig.app_name) %> - <%= t('beta_invite.title_text') %></title>
     <meta name="description" content="">
-    <meta name="author" content="Arnab Chakraborty">
+
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <%= stylesheet_link_tag    'beta_invite/beta_invite.css','beta_invite/common.css' %>
-     <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag 'beta_invite/beta_invite'%>
 
     <!-- Le fav and touch icons -->
     <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    <style>
-      html{
-        background:url("/assets/admin/chart-bg.png") repeat scroll 0 0 #F5F5F5;
-      }
-    </style>
   </head>
 
   <body class="beta-invite" data-controller="<%= controller_name %>" data-action="<%= action_name %>">
     <%= yield %>
-    <%=  javascript_include_tag "beta_invite/lib/jquery.js", "beta_invite/lib/rails.js"%>
+    <%= javascript_include_tag "beta_invite"%>
+  </body>
 </html>
-

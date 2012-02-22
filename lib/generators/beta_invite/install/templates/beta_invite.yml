@@ -1,0 +1,11 @@
+development: &defaults
+  from_email: "mailer@quadnode.com"
+  to_email: "kaushik@quadnode.com"
+  app_name: "YourAppName"
+  company_address: "www.quadnode.com"
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
