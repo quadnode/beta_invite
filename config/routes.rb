@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 	# Routes related to invite
     match '/'      => 'beta_invite/home#index', :as => 'invite_root'    
     match 'create_beta_invite'  => 'beta_invite/beta_invite#create'
-  	resources :beta_invite
+    match 'invites'  => 'beta_invite/beta_invite#invites'
 end

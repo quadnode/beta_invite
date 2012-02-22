@@ -3,10 +3,17 @@
 
 class BetaInvite::BetaInviteController < ApplicationController
  
+  http_basic_authenticate_with :name => "admin", :password => "admin", :only => :invites
+   
   # Default layout 
   layout Proc.new {|controller| controller.request.xhr? ? false : 'beta_invite' }
   
   respond_to :json, :js, :html
+  
+  def invites
+    @beta_invites = BetaInvite::BetaInvite.all
+    render :index
+  end
   
   def new
 		@beta_invite = BetaInvite::BetaInvite.new
