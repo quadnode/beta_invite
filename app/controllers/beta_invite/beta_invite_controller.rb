@@ -3,8 +3,9 @@
 
 class BetaInvite::BetaInviteController < ApplicationController
  
-  http_basic_authenticate_with :name => "admin", :password => "admin", :only => :invites
-   
+  
+  before_filter :authenticate, :only => :invites
+
   # Default layout 
   layout Proc.new {|controller| controller.request.xhr? ? false : 'beta_invite' }
   
@@ -44,4 +45,12 @@ class BetaInvite::BetaInviteController < ApplicationController
       Rails.logger.error ("Unable to send Beta Invite Mail")
     end
 	end
+  
+  protected
+
+def authenticate
+  authenticate_or_request_with_http_basic do |username, password|
+    username == "admin" && password == "admin"
+  end
+end
 end
