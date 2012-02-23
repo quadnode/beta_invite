@@ -12,7 +12,9 @@ class BetaInvite::BetaInviteController < ApplicationController
   respond_to :json, :js, :html
   
   def invites
-    @beta_invites = BetaInvite::BetaInvite.all
+    # @beta_invites = BetaInvite::BetaInvite.all
+    @beta_invites = BetaInvite::BetaInvite.order("beta_invites.created_at DESC").page(params[:page]).per(4)
+    @app_name     = BetaInviteConfig.app_name
     render :index
   end
   

@@ -18,3 +18,5 @@ en:
       subject:  "%{email} has requested a beta invite for %{app_name}"
       body:  "%{email} has requested an invite on %{app_name}"
       total_count:  "%{total}"
+      personal_mail_subject:  "Your personal mail subject."
+      personal_mail_content:  "You have been granted access for %{app_name}"
