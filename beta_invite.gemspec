@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
 
   #s.required_rubygems_version = "> 1.3.6"
 
-  s.add_dependency "rails"              , "3.1.0"
-  s.add_dependency "seedbank"
+  s.add_dependency "rails"    , ">=3.1.0"
+  s.add_dependency "kaminari" , "0.10.4"
 # s.add_dependency "delayed_job_active_record"
 # s.add_dependency "delayed_job"	
 
