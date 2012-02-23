@@ -9,10 +9,11 @@ gem 'mysql2'
 
 #gem "rspec-rails", ">= 2.0.0.beta"
 group :development, :test do
-  gem "rspec-rails", "~> 2.4"
-  gem 'webrat'
+  gem "rspec-rails", "~> 2.8.1"
+  gem "capybara"
   gem 'factory_girl'
 end
+
 gem 'jquery-rails' , "1.0.17"
 #gem 'prototype-rails'
 gem "seedbank"
