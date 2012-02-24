@@ -3,7 +3,7 @@ require 'beta_invite'
 describe BetaInvite do
   describe ".email" do
     it "should give error for no recipient_email" do
-      #pending "troouble with the model access"
+      pending "troouble with the model access"
       beta_invite = BetaInvite::BetaInvite.new
       beta_invite.save.should_not be_valid
       beta_invite.errors.on(:recipient_email).should == "is required"
