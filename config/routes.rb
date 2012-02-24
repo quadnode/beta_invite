@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # app.
 	
 	# Routes related to invite
-    match '/'      => 'beta_invite/home#index', :as => 'invite_root'    
-    match 'create_beta_invite'  => 'beta_invite/beta_invite#create'
-    match 'invites'  => 'beta_invite/beta_invite#invites'
+    get '/'      => 'beta_invite/home#index', :as => 'invite_root'    
+    post 'create_beta_invite'  => 'beta_invite/beta_invite#create'
+    get 'beta_invites'  => 'beta_invite/beta_invite#invites'
 end

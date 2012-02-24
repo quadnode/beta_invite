@@ -11,17 +11,17 @@ class BetaInvite::BetaInviteController < ApplicationController
   
   respond_to :json, :js, :html
   
+  # display table of beta_invites.
   def invites
-    # @beta_invites = BetaInvite::BetaInvite.all
-    @beta_invites = BetaInvite::BetaInvite.order("beta_invites.created_at DESC").page(params[:page]).per(4)
+    @beta_invites = BetaInvite::BetaInvite.order("beta_invites.created_at DESC")
     @app_name     = BetaInviteConfig.app_name
-    render :index
   end
   
   def new
 		@beta_invite = BetaInvite::BetaInvite.new
 	end
 
+  # save the email and send an email.
 	def create
   	@beta_invite = BetaInvite::BetaInvite.new(params[:beta_invite])
 	  if @beta_invite.save
@@ -39,6 +39,7 @@ class BetaInvite::BetaInviteController < ApplicationController
   
   private
    
+  # send mail to app admin about a request being registered.
   def send_beta_invite_email
     begin
       total_count = BetaInvite::BetaInvite.count
@@ -50,9 +51,10 @@ class BetaInvite::BetaInviteController < ApplicationController
   
   protected
 
-def authenticate
-  authenticate_or_request_with_http_basic do |username, password|
-    username == "admin" && password == "admin"
+  # http basic auth to view beta_invites page.
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+       username == BetaInviteConfig.username && password == BetaInviteConfig.password
+    end
   end
-end
 end

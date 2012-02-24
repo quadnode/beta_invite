@@ -1,8 +1,13 @@
+# configure the from email and to email as per your needs.
+# the app_name would be the title and also the heading of the landing page.
+# the username and password here is for http auth configurable by needs to view beta_invtes page.
 development: &defaults
   from_email: "mailer@quadnode.com"
-  to_email: "kaushik@quadnode.com"
+  to_email: "test@quadnode.com"
   app_name: "YourAppName"
-  company_address: "www.quadnode.com"
+  company_address: "http://www.quadnode.com"
+  username: "admin"
+  password: "admin"
 
 test:
   <<: *defaults

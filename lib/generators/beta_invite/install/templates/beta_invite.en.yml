@@ -7,6 +7,10 @@ en:
     company:  "QuadNode Technologies"
     tag_line:  "Provide your email id to get notified when we launch!"
     button_tag:  "Get Invited"
+    total_count:  "Total Invites"
+    total:  "%{total}"
+    home:  "Home"
+    email_id:  "email-id"
 
     messages:
       thank_you:  "Thank you for signing up with us , we will keep you updated."
@@ -18,3 +22,4 @@ en:
       subject:  "%{email} has requested a beta invite for %{app_name}"
       body:  "%{email} has requested an invite on %{app_name}"
       total_count:  "%{total}"
+      personal_mail_subject:  "Your personal mail subject."

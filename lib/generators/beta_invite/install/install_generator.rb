@@ -5,6 +5,8 @@ module BetaInvite
   module Generators
     class InstallGenerator < Rails::Generators::Base
       include Rails::Generators::Migration
+      # A small description of the generator --help in terminal.
+      desc "Generates beta_invites table along with beta_invite initializer , beta_invite YAML to modify configurations and locales named beta_invite"
 
       def self.source_root
         File.join(File.dirname(__FILE__), 'templates')
