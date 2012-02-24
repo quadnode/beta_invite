@@ -1,5 +1,5 @@
 
-<div class = "home-link pull-left">
+<div class = "home-link">
   <%=link_to t('beta_invite.home'), '/'%>
 </div>
 <% if @beta_invites.count.zero? %>
@@ -9,26 +9,30 @@
 <%else%>
 <!-- Display beta invites count -->
   <div class="beta-content">
-    <h3><%= t('beta_invite.total_count')%> : <%= t('beta_invite.total' , :total => @beta_invites.count)%></h3>
+  	<h3><%= t('beta_invite.total_count')%> : <%= t('beta_invite.total' , :total => @beta_invites.count)%></h3>
   </div>
-  <table class="zebra-striped">
-    <thead>
-      <th>#</th>
-      <th><%= t('beta_invite.email_id')%></th>
-    </thead>
+  <div class = "table-content">
+    <table class="zebra-striped">
+      <thead>
+        <th>#</th>
+        <th><%= t('beta_invite.email_id')%></th>
+        <th><%= t('beta_invite.time')%></th>
+      </thead>
 
-    <% @beta_invites.each do |invite| %>
-      <tr>
-        <td><%=invite.id%></td>
-        <!-- send a personal mail to any one by using mail_to -->
-        <td><%= mail_to( 
-                  invite.recipient_email, 
-                  invite.recipient_email, 
-                  { :subject => t('beta_invite.mails.personal_mail_subject')
-                  } 
-               ) %>
-        </td>
-      </tr>
-    <%end%>
-  </table>
+      <% @beta_invites.each do |invite| %>
+        <tr>
+          <td><%=invite.id%></td>
+          <!-- send a personal mail to any one by using mail_to -->
+          <td><%= mail_to( 
+                    invite.recipient_email, 
+                    invite.recipient_email, 
+                    { :subject => t('beta_invite.mails.personal_mail_subject')
+                    } 
+                 ) %>
+          </td>
+          <td><%= distance_of_time_in_words(invite.created_at.to_i , Time.now.to_i)%></td>
+        </tr>
+      <%end%>
+    </table>
+  </div>
 <%end%>
