@@ -3,7 +3,7 @@ module BetaInvite
     def beta_invites_requested(beta_invite , total_count)
       @beta_invite  = beta_invite
       @total_count  = total_count
-      subject  = t('beta_invite.mails.subject' , email: @beta_invite.recipient_email , app_name: BetaInviteConfig.app_name)
+      subject  = t('beta_invite.mails.subject' , :email => @beta_invite.recipient_email , :app_name => BetaInviteConfig.app_name)
       send_mail(subject)
     end  
 
