@@ -10,7 +10,7 @@ class BetaInvite::BetaInviteController < ApplicationController
   
   # display list of beta_invites in a tabular format.
   def invites
-    @beta_invites = BetaInvite::BetaInvite.order("beta_invites.created_at DESC")
+    @beta_invites = BetaInvite::BetaInvite.order("beta_invites.created_at DESC").page(params[:page]).per(4)
     @app_name     = BetaInviteConfig.app_name
   end
   
