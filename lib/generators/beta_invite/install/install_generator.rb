@@ -30,6 +30,7 @@ module BetaInvite
         #pulling all the migration templates and generating migartion file for each
         
         migration_template 'create_beta_invites.rb', 'db/migrate/create_beta_invites.rb' if (Dir.glob("db/migrate/[0-9]*_*.rb").grep(/\d+_create_beta_invites.rb$/).first).nil?
+        migration_template 'create_delayed_jobs.rb', 'db/migrate/create_delayed_jobs.rb' if (Dir.glob("db/migrate/[0-9]*_*.rb").grep(/\d+_create_delayed_jobs.rb$/).first).nil?
       end
       
       #copy the initializer file to load the beta_invite.yml mentioned in BetaInviteConfig variable
