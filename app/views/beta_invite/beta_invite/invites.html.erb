@@ -33,6 +33,7 @@
           <td><%= distance_of_time_in_words(invite.created_at.to_i , Time.now.to_i)%></td>
         </tr>
       <%end%>
+        <tr><%= paginate @beta_invites %></tr>  
     </table>
   </div>
 <%end%>

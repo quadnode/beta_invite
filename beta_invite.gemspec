@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   #s.required_rubygems_version = "> 1.3.6"
 
   s.add_dependency "rails"    , ">=3.1.0"
+  s.add_dependency "kaminari" 
 
   s.files = Dir["{app,lib,config,vendor,public}/**/*"] + ["Rakefile", "Gemfile", "README.rdoc"]
   s.require_path = 'lib'
