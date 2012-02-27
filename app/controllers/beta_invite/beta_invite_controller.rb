@@ -1,8 +1,5 @@
-# @author : Harsha Sawant
-# @date : 7th Jan 2012
 
 class BetaInvite::BetaInviteController < ApplicationController
- 
   
   before_filter :authenticate, :only => :invites
 
@@ -11,7 +8,7 @@ class BetaInvite::BetaInviteController < ApplicationController
   
   respond_to :json, :js, :html
   
-  # display table of beta_invites.
+  # display list of beta_invites in a tabular format.
   def invites
     @beta_invites = BetaInvite::BetaInvite.order("beta_invites.created_at DESC")
     @app_name     = BetaInviteConfig.app_name
