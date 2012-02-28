@@ -1,4 +1,3 @@
-
 <div class = "home-link">
   <%=link_to t('beta_invite.home'), '/'%>
 </div>
@@ -33,7 +32,9 @@
           <td><%= distance_of_time_in_words(invite.created_at.to_i , Time.now.to_i)%></td>
         </tr>
       <%end%>
-        <tr><%= paginate @beta_invites %></tr>  
     </table>
+    <div class = "pagination-div">
+      <%= paginate @beta_invites %>
+    </div>
   </div>
 <%end%>
