@@ -4,5 +4,4 @@ module BetaInvite
   require 'beta_invite/engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3
   require 'kaminari'  
   require 'delayed_job_active_record'
-
 end

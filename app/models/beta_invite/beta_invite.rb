@@ -9,7 +9,7 @@ module BetaInvite
 
     def recipient_is_not_registered
      if BetaInvite.find_by_recipient_email(recipient_email)
-       errors.add( :recipient_email, 'is already registered with us for the private Beta') 
+       errors.add( :recipient_email, 'is already registered with us for private Beta') 
      end
    end
   end

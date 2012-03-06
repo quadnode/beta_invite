@@ -2,3 +2,4 @@
 bundler/
 cache/
 Gemfile.lock
+.idea/

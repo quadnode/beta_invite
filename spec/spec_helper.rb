@@ -4,7 +4,7 @@ ENV["RAILS_ENV"] = "test"
 $:.unshift(File.expand_path('../../lib', __FILE__))
 
 
-#require 'spec/rails'
+require 'spec/rails'
 
 ENGINE_RAILS_ROOT=File.join(File.dirname(__FILE__), '../')
 

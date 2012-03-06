@@ -4,6 +4,7 @@
 development: &defaults
   from_email: "mailer@quadnode.com"
   to_email: "test@quadnode.com"
+  notification_mail_to_user: true
   app_name: "YourAppName"
   company_address: "http://www.quadnode.com"
   username: "admin"

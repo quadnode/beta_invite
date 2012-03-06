@@ -33,10 +33,25 @@ GEM
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    capybara (1.1.2)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 0.1.4)
+    childprocess (0.3.1)
+      ffi (~> 1.0.6)
+    delayed_job (3.0.1)
+      activesupport (~> 3.0)
+    delayed_job_active_record (0.3.2)
+      activerecord (> 2.1.0)
+      delayed_job (~> 3.0.0)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     factory_girl (2.6.0)
       activesupport (>= 2.3.9)
+    ffi (1.0.11)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.17)
@@ -98,7 +113,12 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.8.0)
-    seedbank (0.0.7)
+    rubyzip (0.9.6.1)
+    selenium-webdriver (2.20.0)
+      childprocess (>= 0.2.5)
+      ffi (~> 1.0)
+      multi_json (~> 1.0)
+      rubyzip
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -109,23 +129,19 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.31)
-    webrat (0.7.3)
-      nokogiri (>= 1.2.0)
-      rack (>= 1.0)
-      rack-test (>= 0.5.3)
-    will_paginate (3.0.3)
+    xpath (0.1.4)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  capybara
+  delayed_job_active_record
   factory_girl
   jquery-rails (= 1.0.17)
-  kaminari (= 0.13.0)
+  kaminari
   mysql2
   prototype-rails
   rails (= 3.1.0)
-  rspec-rails (~> 2.4)
-  seedbank
-  webrat
-  will_paginate
+  rspec-rails (~> 2.8.1)
