@@ -2,4 +2,25 @@
 
 Install this gem to get your project a beta-invite implementation.
 
-Coming Soon.
+= Installation
+
+'gem install beta_invite'
+
+= Usage
+
+Once you run 'bundle install' you will have two generators for 'beta_invite' namely, 
+
+1. Install
+
+2. Views
+
+= Install generator
+
+After installing the gem run this command mentioned below.
+
+ 'rails generate beta_invite:install'
+
+ This will create a new initializer in your app's initializer folder named 'beta_invite.rb' which will load the 
+ YAML file which also gets created in your app's config folder named 'beta_invite.yml'
+
+ 
