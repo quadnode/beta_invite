@@ -6,7 +6,22 @@ Install this gem to get your project a beta-invite implementation.
 
 'gem install beta_invite'
 
-= Usage
+Dependencies : Kaminari and Delayed Jobs
+
+= Features
+
+The gem provides features such as : - 
+
+1. Provide a landing page with deafult layout for Beta Invites request.
+2. A list of beta_invites requested to be viewed by the administrator on "/beta_invites" route.
+3. Send a personal message to any email address mentioned in the table for Beta Invites.
+4. Redirect to a valid specified path once the user registers for beta invite.
+5. Get a notification email to the admin when the user registers for beta invite.
+6. Configure the from and to email addresses of the admin along with company name and much more.
+7. Change the look and feel of the beta invite layout by generating the views.
+8. Background jobs using Delayed Jobs.
+
+= Installation
 
 Once you run 'bundle install' you will have two generators for 'beta_invite' namely, 
 
@@ -18,9 +33,99 @@ Once you run 'bundle install' you will have two generators for 'beta_invite' nam
 
 After installing the gem run this command mentioned below.
 
- 'rails generate beta_invite:install'
+ rails generate beta_invite:install
 
- This will create a new initializer in your app's initializer folder named 'beta_invite.rb' which will load the 
- YAML file which also gets created in your app's config folder named 'beta_invite.yml'
+This command would generate a few files in your app. These files are :
 
- 
+1. beta_invite.rb in config/initializers
+2. beta_invite.yml in config/
+3. beta_invite.en.yml in config/locales
+4. create_beta_invites.rb in db/migrate
+5. create_delayed_jobs.rb in db/migrate
+
+This will create a new initializer in your app's initializer folder named 'beta_invite.rb' which will load the 
+YAML file which also gets created in your app's config folder named 'beta_invite.yml'
+
+Once you run this command, make sure to migrate your tables. There will be two tables beta_invites and delayed_jobs created in your database.
+
+Do not forget to remove 'public/index.html' in your app. The Beta invites page is the landing page.
+
+Now, run your rails server and also run the rake job for delayed job and you are Gold! 
+
+ rake jobs:work 
+
+= Views generator
+
+This generator will generate all the views related to beta_invite gem into your app. You can then modify the look and feel as per your wish.
+
+The email templates are also generated from this command.
+
+Run this command by : - 
+
+ rails generate beta_invite:views
+
+= Configuration
+
+The YAML file in your app, beta_invite.yml , is where the configurations would take place. It might look something like this : -
+
+ # configure the from email and to email as per your needs.
+ # the app_name would be the title and also the heading of the landing page.
+ # the username and password here is for http auth configurable by needs to view beta_invtes page.
+
+ development: &defaults
+   from_email: "mailer@quadnode.com"
+   to_email: "test@quadnode.com"
+   notification_mail_to_user: true
+   app_name: "YourAppName"
+   company_address: "http://www.quadnode.com"
+   username: "admin"
+   password: "admin"
+
+ test:
+   <<: *defaults
+
+ production:
+   <<: *defaults
+
+The 'from_email' is the email address you would configure to send out email as part of your application.
+
+The 'to_email' is the email address of the administrator who would receive emails when a user registers for beta invite.
+
+The 'notification_mail_to_user' value can be set to 'false' if you do not wish to send out a sort of Thank You email to the user once he/she has registered for beta_invite. By default, it has been set to 'True'.
+
+The landing page would consist of the name of your app. Name your app in 'app_name'.
+
+The layout includes a hyperlink to the company's website. Set up your URL in 'company_address'
+
+The 'username' and 'password' is for the basic HTTP authentication to visit "/beta_invites" route wherein you can view all the Beta Invites in Tabular format. Set up your own user name and password here.
+
+= Redirecting
+
+If you wish to redirect the user to some URl after the user has requested for Beta Invite, you can do so by over-writing a method in your application controller like this : - 
+
+ def after_beta_invite_request_path
+   some_valid_path
+ end
+
+Now, whenever a user registers for Beta Invite, you can redirect him/her to 'some_valid_path'. Don't worry about the flash messages, you can print it out on your redirected URL.
+
+= Locales
+
+Yes, everything is in the locales even your flash messages. You can change the messages as per your wish. 
+
+Its pretty straight forward we believe. The title, title_text and the rest on top are used in the landing page and "/beta_invites" page.
+
+The 'messages' in the locales consist of flash messages. 
+
+Pretty much everything related to mail is under 'mails'. The 'mail_to_user' is when a thank you email is sent to user as soon he/she registers for Beta Invite. 'personal_mail_subject' is the subject when you send an email to any of the emails in '/beta_invites' page.
+
+
+**this text is between two stars **
+
+*this is between one *
+
+"This is in double inverted commas"
+
+
+
+

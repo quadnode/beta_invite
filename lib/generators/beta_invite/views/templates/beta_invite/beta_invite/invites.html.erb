@@ -1,4 +1,3 @@
-
 <div class = "home-link">
   <%=link_to t('beta_invite.home'), '/'%>
 </div>
@@ -34,5 +33,8 @@
         </tr>
       <%end%>
     </table>
+    <div class = "pagination-div">
+      <%= paginate @beta_invites %>
+    </div>
   </div>
 <%end%>

@@ -1,9 +1,12 @@
 // JQuery the create action to display appropriate messages once an email
 // has been entered.
+if (<%= @redirect %> == true) {
+	window.location = '<%= @path %>'
+}
+else{
 <%
  msg = flash[:notice] if flash[:notice]
  msg = flash[:alert] if flash[:alert]
-
 
  is_error = false
 
@@ -13,8 +16,9 @@
  end
 
  info_class = is_error ? "alert-message error" : "alert-message success";
-%>
+ %>
 $('#info').hide( 'slow' );
 clearTimeout($('#info').get(0).timer);
 $('#info').attr('class', '').addClass('<%= info_class %>').html('<%= msg  %>').show('slow');
 $('#info').get(0).timer = setTimeout( function(){ $('#info').hide( 'slow' );}, 5000);
+};
