@@ -4,7 +4,9 @@ Install this gem to get your project a beta-invite implementation.
 
 = Installation
 
-'gem install beta_invite'
+ 'gem install beta_invite'
+
+Rails version : >= 3.1.0
 
 Dependencies : Kaminari and Delayed Jobs
 
@@ -58,7 +60,7 @@ Now, run your rails server and also run the rake job for delayed job and you are
 
 This generator will generate all the views related to beta_invite gem into your app. You can then modify the look and feel as per your wish.
 
-The email templates are also generated from this command.
+The email templates and views related to kaminari (for pagination) are also generated from this command.
 
 Run this command by : - 
 
@@ -118,14 +120,6 @@ Its pretty straight forward we believe. The title, title_text and the rest on to
 The 'messages' in the locales consist of flash messages. 
 
 Pretty much everything related to mail is under 'mails'. The 'mail_to_user' is when a thank you email is sent to user as soon he/she registers for Beta Invite. 'personal_mail_subject' is the subject when you send an email to any of the emails in '/beta_invites' page.
-
-
-**this text is between two stars **
-
-*this is between one *
-
-"This is in double inverted commas"
-
 
 
 
