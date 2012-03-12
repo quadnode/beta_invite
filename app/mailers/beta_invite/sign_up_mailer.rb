@@ -12,7 +12,7 @@ module BetaInvite
 
     def notification_mail_to_user( beta_invite )
       @beta_invite = beta_invite
-      subject = "We will notify you shortly."
+      subject = t('beta_invite.mails.mail_to_user.subject')
       send_mail( subject , @beta_invite.recipient_email , BetaInviteConfig.from_email )
     end
 

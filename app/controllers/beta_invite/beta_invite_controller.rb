@@ -1,4 +1,5 @@
 class BetaInvite::BetaInviteController < ApplicationController
+
   before_filter :authenticate, :only => :invites
 
   # Default layout 
@@ -25,6 +26,9 @@ class BetaInvite::BetaInviteController < ApplicationController
       if @beta_invite.save
       flash[:alert] = nil
       flash[:notice] = t('beta_invite.messages.thank_you')
+      if BetaInviteConfig.notification_mail_to_user
+        send_notification_mail_to_user
+      end
       send_beta_invite_email
       check_for_redirects
     else
@@ -64,11 +68,11 @@ class BetaInvite::BetaInviteController < ApplicationController
 	end
 
   def send_notification_mail_to_user
-    # begin
+    begin
       BetaInvite::SignUpMailer.delay.notification_mail_to_user( @beta_invite )
-    # rescue Exception => e
-      # Rails.logger.error ("Unable to mail the notification mail to user")
-    # end
+    rescue Exception => e
+      Rails.logger.error ("Unable to mail the notification mail to user")
+    end
   end
 
   protected

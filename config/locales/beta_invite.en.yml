@@ -23,3 +23,7 @@ en:
       body:  "%{email} has requested an invite on %{app_name}"
       total_count:  "%{total}"
       personal_mail_subject:  "Your personal mail subject."
+
+      mail_to_user:
+        subject:  "Thank you, we have recieved your request."
+        message:  "Hold your seats, we will keep you updated with %{app_name}"
