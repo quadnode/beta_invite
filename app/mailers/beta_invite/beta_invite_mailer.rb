@@ -1,5 +1,5 @@
 module BetaInvite
-  class SignUpMailer < ActionMailer::Base
+  class BetaInviteMailer < ActionMailer::Base
     # the to_email and from_email are configured in the beta_invite.yml in 
     # developer app's config folder.
     

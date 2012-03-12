@@ -61,7 +61,7 @@ class BetaInvite::BetaInviteController < ApplicationController
   def send_beta_invite_email
     begin
       total_count = BetaInvite::BetaInvite.count
-      BetaInvite::SignUpMailer.delay.beta_invites_requested( @beta_invite , total_count )
+      BetaInvite::BetaInviteMailer.delay.beta_invites_requested( @beta_invite , total_count )
     rescue Exception => e
       Rails.logger.error ("Unable to send Beta Invite Mail")
     end
@@ -69,7 +69,7 @@ class BetaInvite::BetaInviteController < ApplicationController
 
   def send_notification_mail_to_user
     begin
-      BetaInvite::SignUpMailer.delay.notification_mail_to_user( @beta_invite )
+      BetaInvite::BetaInviteMailer.delay.notification_mail_to_user( @beta_invite )
     rescue Exception => e
       Rails.logger.error ("Unable to mail the notification mail to user")
     end
